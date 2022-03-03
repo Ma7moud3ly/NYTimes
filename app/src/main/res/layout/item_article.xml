@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.nytimes.data.Article" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/article_tab"
+        style="@style/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/article_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_launcher_foreground"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/article_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="2"
+                android:paddingVertical="5dp"
+                android:text='@{article.title,default="Article Title"}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dark"
+                app:layout_constraintEnd_toStartOf="@id/article_open"
+                app:layout_constraintStart_toEndOf="@id/article_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/article_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text='@{article.author,default="Article Author"}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintEnd_toEndOf="@id/article_title"
+                app:layout_constraintStart_toStartOf="@id/article_title"
+                app:layout_constraintTop_toBottomOf="@id/article_title" />
+
+
+            <TextView
+                android:id="@+id/article_a"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text='@{article.source,default="Article Info"}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintEnd_toStartOf="@id/article_date_icon"
+                app:layout_constraintStart_toStartOf="@id/article_title"
+                app:layout_constraintTop_toBottomOf="@id/article_author" />
+
+
+            <ImageView
+                android:id="@+id/article_date_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/icalendar"
+                app:layout_constraintBottom_toBottomOf="@id/article_date"
+                app:layout_constraintEnd_toStartOf="@id/article_date"
+                app:layout_constraintTop_toTopOf="@id/article_date" />
+
+            <TextView
+                android:id="@+id/article_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:text='@{article.date,default="2022-06-06"}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintEnd_toEndOf="@id/article_title"
+                app:layout_constraintTop_toBottomOf="@id/article_author" />
+
+            <ImageView
+                android:id="@+id/article_open"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/arrow_forward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
