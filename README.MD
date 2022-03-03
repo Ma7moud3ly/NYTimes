@@ -1,7 +1,7 @@
 # NY Times Most Popular Articles
 ##### Developer [@ma7moud3ly](https://github.com/ma7moud3ly)
 ##### Description [@Android Kotlin Test](https://github.com/Ma7moud3ly/NYTimes/blob/master/screens/Android%20(Kotlin)%20Test.pdf) 
-##### APK Download [app-release.apk](https://github.com/Ma7moud3ly/NYTimes/blob/main/app/release/app-release.apk)
+##### APK Download [app-release.apk](https://raw.githubusercontent.com/Ma7moud3ly/NYTimes/master/app/release/app-release.apk)
 ### Technologies 
 - Kotlin
 - MVVM Architecture
